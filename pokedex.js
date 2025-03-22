@@ -1,4 +1,4 @@
-const MAX_POKEMON = 1302;
+const MAX_POKEMON = 649;
 const listWrapper = document.querySelector(".list-wrapper");
 const searchInput = document.querySelector("#search-input");
 const numberFilter = document.querySelector("#number");
@@ -20,16 +20,16 @@ fetch(`https://pokeapi.co/api/v2/pokemon?limit=${MAX_POKEMON}`)
 async function fetchPokemonDataBeforeRedirect(id) {
     try {
         const [pokemon, pokemonSpecies] = await Promise
-        .all([fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-        .then((res) =>
-            res.json()
-        ),
-        fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
-        .then((res) =>
-            res.json()
-        ),
-    ])
-    return true
+            .all([fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+            .then((res) =>
+                res.json()
+            ),
+            fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
+            .then((res) =>
+                res.json()
+            ),
+        ]);
+        return true
     } catch (error) {
         console.error("Failed to fetch Pokemon data before redirect")
     }
@@ -47,7 +47,7 @@ function displayPokemons(pokemon) {
             <div class="number-wrap">
                 <p class="caption-fonts">#${pokemonID}</p>
             </div>
-            <div class="image-wrap">
+            <div class="img-wrap">
                 <img src="https://raw.githubusercontent.com/pokeapi/sprites/master/sprites/pokemon/other/dream-world/${pokemonID}.svg" alt="${pokemon.name}" />
             </div>
             <div class="name-wrap">
