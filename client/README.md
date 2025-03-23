@@ -1,2 +1,6 @@
 # Pokedex
-Pokedex is a high-tech, portable electronic encyclopedia used by trainers to record and learn about the different species of Pokemon they encounter
+A JavaScript-based Pokédex website with search, filtering, and responsive design. This project is built using HTML, CSS, and JavaScript to provide a user-friendly experience for browsing Pokémon data.
+# Features
+- Search capabilities
+- Filtering
+- Responsive designs
